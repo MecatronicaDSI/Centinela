@@ -1,0 +1,16 @@
+[Unit]
+Description=My service
+Wants=network.target
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 -u /home/pi/sysras/WS/mouse.py
+WorkingDirectory = /home/pi/sysras/WS
+Restart=always
+RestartSec=15s
+User=pi
+Group=pi
+
+[Install]
+WantedBy=multi-user.target
+

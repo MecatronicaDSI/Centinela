@@ -1,0 +1,16 @@
+[Unit]
+Description=My service
+Wants=network.target
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+ExecStart=/usr/bin/python3 -u /home/pi/sysras/antena/antenaV2-4.py
+WorkingDirectory = /home/pi/sysras/antena
+Restart=always
+RestartSec=10s
+User=pi
+Group=pi
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,16 @@
+[Unit]
+Description= Apagado Seguro
+After=multi-user.target
+
+[Service]
+ExecStart=!/usr/bin/python3 -u /home/pi/sysras/WS/ApagadoSeguro.py
+WorkingDirectory= /home/pi/sysras/WS
+Restart=always
+RestartSec=15s
+User=pi
+Group=pi
+
+[Install]
+WantedBy=multi-user.target
+
+
